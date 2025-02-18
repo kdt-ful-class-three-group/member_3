@@ -44,6 +44,7 @@
       const age = document.getElementById('getAge').value;
 
       // GET 요청으로 데이터를 서버에 보내기 (실제 서버는 없으니 로그로 출력)
+      // queryString방식
       const url = `/test?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}`;
       document.getElementById('result').innerText = `GET 요청 URL: ${url}`;  // 결과 표시
     });
@@ -60,6 +61,7 @@
       const age = document.getElementById('postAge').value;
 
       // POST 요청으로 데이터를 서버에 보내기 (실제 서버는 없으니 로그로 출력)
+      // JSON 방식
       const data = JSON.stringify({ name, age });
       document.getElementById('result').innerText = `POST 요청 데이터: ${data}`;  // 결과 표시
     });
