@@ -4,9 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GET, POST 요청 처리</title>
+  <style>
+
+body {
+            margin: 20px;
+        }
+
+    hr {
+      border: 2px solid deeppink;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+
+    .fileReadButton:before {
+      content: '';
+      visibility: hidden;
+    }
+
+    .container {
+            margin: 20px 0;
+            margin: 10%;
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            border-color: silver;
+            padding-bottom: 10px;
+        }
+
+    .allContainer {
+      border: 1px solid black;
+      border-radius: 30px;
+    }
+
+  </style>
 </head>
 <body>
-  <h1>폼을 제출해보세요!</h1>
+  <h1>&lt;GET요청과 POST요청을 사용해보자!&gt;</h1>
 
   <!-- GET 요청을 위한 폼 -->
   <h2>GET 요청</h2>
@@ -33,6 +69,50 @@
   </form>
 
   <div id="result"></div>
+
+  <hr>
+
+
+  <!-- ------------------------------------------ -->
+
+
+  <h1> &lt;파일시스템 주요 기능을 사용해보자!&gt;</h1>
+
+  <br>
+
+<div class="allContainer">
+
+  <!-- 파일 생성 (Create) -->
+  <div class="container">
+    <h2>파일 생성</h2>
+    <button id="createFileBtn">파일 생성</button>
+
+  </div>
+  <!-- 파일 읽기 (Read) -->
+  <div class="container">
+    <h2>파일 읽기</h2>
+    <label for="" class="fileReadButton"><input type="file" id="fileInput">.</label>
+  
+    <p id="fileContent"></p>
+  </div>
+  
+  <!-- 파일 수정 (Update) -->
+  <div class="container">
+    <h2>파일 수정</h2>
+    <button id="modifyFileBtn">파일 수정</button>
+  </div>
+  
+  <!-- 파일 삭제 (Delete) -->
+  <div class="container">
+    <h2>파일 삭제</h2>
+    <button id="deleteFileBtn">파일 삭제</button>
+  </div>
+</div>
+
+
+<br><br><br><br>
+
+
 
   <script src="./app.js"></script>
 </body>
