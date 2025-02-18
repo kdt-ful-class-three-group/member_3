@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <title>Document</title>
 </head>
 <body>
@@ -17,5 +18,68 @@
     </form>
   
   <script src="./app.js"></script>
+=======
+  <title>GET, POST 요청 처리</title>
+</head>
+<body>
+  <h1>폼을 제출해보세요!</h1>
+
+  <!-- GET 요청을 위한 폼 -->
+  <h2>GET 요청</h2>
+  <form id="getForm" method="get">
+    <label>이름: 
+      <input type="text" name="name" id="getName" required/>
+    </label>
+    <label> 나이: 
+      <input type="text" name="age" id="getAge" required/>
+    </label>
+    <button type="submit">GET 제출</button>
+  </form>
+
+  <!-- POST 요청을 위한 폼 -->
+  <h2>POST 요청</h2>
+  <form id="postForm" method="post">
+    <label>이름: 
+      <input type="text" name="name" id="postName" required/>
+    </label>
+    <label> 나이: 
+      <input type="text" name="age" id="postAge" required/>
+    </label>
+    <button type="submit">POST 제출</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    // GET 요청 처리 (자바스크립트로 처리)
+    document.getElementById('getForm').addEventListener('submit', function(event) {
+      event.preventDefault();  // 기본 폼 제출 방지
+
+      // 사용자 입력 값 가져오기
+      const name = document.getElementById('getName').value;
+      const age = document.getElementById('getAge').value;
+
+      // GET 요청으로 데이터를 서버에 보내기 (실제 서버는 없으니 로그로 출력)
+      const url = `/test?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}`;
+      document.getElementById('result').innerText = `GET 요청 URL: ${url}`;  // 결과 표시
+    });
+
+
+
+    
+    // POST 요청 처리 (자바스크립트로 처리)
+    document.getElementById('postForm').addEventListener('submit', function(event) {
+      event.preventDefault();  // 기본 폼 제출 방지
+
+      // 사용자 입력 값 가져오기
+      const name = document.getElementById('postName').value;
+      const age = document.getElementById('postAge').value;
+
+      // POST 요청으로 데이터를 서버에 보내기 (실제 서버는 없으니 로그로 출력)
+      const data = JSON.stringify({ name, age });
+      document.getElementById('result').innerText = `POST 요청 데이터: ${data}`;  // 결과 표시
+    });
+  </script>
+>>>>>>> 22ab3517cea4cbd2d06f93cb791f38ead513cc71
 </body>
 </html>
