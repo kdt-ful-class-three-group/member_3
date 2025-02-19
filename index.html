@@ -39,36 +39,54 @@ body {
       border-radius: 30px;
     }
 
+    .getPostcontainer {
+      border: 1px solid black;
+      padding: 0px 0px 30px 0px;
+    }
+    .getPostcontainer h2 {
+      text-align: center;
+    } 
+
+    .getPostcontainer form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+   
+
   </style>
 </head>
 <body>
   <h1>&lt;GET요청과 POST요청을 사용해보자!&gt;</h1>
 
-  <!-- GET 요청을 위한 폼 -->
-  <h2>GET 요청</h2>
-  <form id="getForm" method="get">
-    <label>이름: 
-      <input type="text" name="name" id="getName" required/>
-    </label>
-    <label> 나이: 
-      <input type="text" name="age" id="getAge" required/>
-    </label>
-    <button type="submit">GET 제출</button>
-  </form>
+  <div class="getPostcontainer">
 
-  <!-- POST 요청을 위한 폼 -->
-  <h2>POST 요청</h2>
-  <form id="postForm" method="post">
-    <label>이름: 
-      <input type="text" name="name" id="postName" required/>
-    </label>
-    <label> 나이: 
-      <input type="text" name="age" id="postAge" required/>
-    </label>
-    <button type="submit">POST 제출</button>
-  </form>
-
-  <div id="result"></div>
+    <!-- GET 요청을 위한 폼 -->
+    <h2>GET 요청</h2>
+    <form id="getForm" method="get">
+      <label>이름: 
+        <input type="text" name="name" id="getName" required/>
+      </label>
+      <label> 나이: 
+        <input type="text" name="age" id="getAge" required/>
+      </label>
+      <button type="submit">GET 제출</button>
+    </form>
+  
+    <!-- POST 요청을 위한 폼 -->
+    <h2>POST 요청</h2>
+    <form id="postForm" method="post">
+      <label>이름: 
+        <input type="text" name="name" id="postName" required/>
+      </label>
+      <label> 나이: 
+        <input type="text" name="age" id="postAge" required/>
+      </label>
+      <button type="submit">POST 제출</button>
+    </form>
+  
+    <div id="result"></div>
+  </div>
 
   <hr>
 

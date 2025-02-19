@@ -35,11 +35,21 @@ document.getElementById('postForm').addEventListener('submit', function(event) {
 
 // 파일 생성 (Create)
 document.getElementById('createFileBtn').onclick = function() {
+
+  // 파일안에 기본 내용
   const textContent = '뭘봐';
+
+  // file 객체를 생성
+  // text/plain은 일반 텍스트 파일 형식임을 의미
   const file = new File([textContent], 'newFile.txt', { type: 'text/plain' });  
+
+  // HTML에서 a태그를 동적으로 생성
+  // a태그는 파일 다운로드 트리거 역할
   const link = document.createElement('a');
+
+  // 
   link.href = URL.createObjectURL(file);  
-  link.download = file.name;  // 파일 이름을 사용
+  link.download = file.name; 
   link.click();
 };
 
@@ -62,7 +72,7 @@ document.getElementById('modifyFileBtn').onclick = function() {
       const file = new File([modifiedContent], 'modifiedFile.txt', { type: 'text/plain' }); 
       const link = document.createElement('a');
       link.href = URL.createObjectURL(file); 
-      link.download = file.name;  // 파일 이름을 사용
+      link.download = file.name; 
       link.click();
   } else {
       alert('먼저 파일을 선택하세요!');
